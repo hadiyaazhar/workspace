@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common element in 3  unsorted array</title>
+</head>
+<body>
+    
+
+<script>
+// Three unsorted Arrays.    
+var A =[22,45,27,63,5]
+var B =[101,23,66,27,5]
+var C =[2,17,88,11,27,5]
+var D =[];
+var Common=[];
+var k=0;
+var a=0;
+for(var i=0; i<A.length;i++)
+{    
+    
+    for(var j=0 ;j<B.length;j++)
+    {
+        if(A[i]===B[j])
+        {
+            D[k] =A[i]
+            k++
+        }
+    }
+}
+
+for(k=0;k<D.length;k++)
+{
+ for(var l =0; l<C.length; l++)
+ {
+    if(D[k]===C[l])
+     {
+     Common[a]=D[k]
+     a++;
+     }
+ }
+}
+
+console.log("Common elements are ")
+for(i=0; i<Common.length; i++)
+{  console.log(Common[i])}
+
+</script>    
+</body>
+</html>
