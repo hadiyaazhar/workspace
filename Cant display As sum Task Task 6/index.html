@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cant diplay as Sum</title>
+</head>
+<body>
+<h1>Smallest Positive integer that can’t be represented as a sum</h1>
+<p>
+
+</p>
+
+    <script>
+        const A = [1, 10, 3, 11, 6, 15]
+        const B = [1, 2, 3, 4,5,6,7,8]
+        function FindNumber(Arr)
+        {
+        document.write("<strong> Given Input Array is </strong> <br><br>")
+       Arr.sort()
+
+        for(i=0; i<Arr.length;i++)
+        {
+            document.write(Arr[i]+ " ,")
+        }
+        
+        document.write("<br><br>")
+        document.write("<strong> Output</strong>")
+        document.write("<br><br>")
+
+        document.write("The smallest integer value that cannot be represented as sum of elements from given array is :")
+
+        {
+            var result=1;
+            for(var i=0; i<Arr.length;i++)
+            {
+                if(Arr[i]<=result)
+                {
+                    result=result+Arr[i]
+                }
+            }
+        }
+        document.write(result)
+        }
+        document.write("1-")
+        FindNumber(A)
+        document.write("<br> <br> 2-")
+        FindNumber(B)
+
+    </script>
+    
+
+</body>
+</html>
