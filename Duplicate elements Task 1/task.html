@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log("H")
+var A =[1,2,2,4,5]
+var smallest;
+var maximum;
+let missing =[]
+function FindMissing(A)
+{   
+    A.sort();   
+    smallest=Math.min(...A);
+    maximum = Math.max(...A)
+    for(i=smallest ; i<= maximum; i++)
+    {  
+        if(A.indexOf(i)<0)
+        { console.log(i + " is missing")
+        A.push(i);
+        return i;
+        }
+    }
+    
+}
+
+FindMissing(A);
+for ( var i=0; i<A.length; i++)
+{
+    for(var j=0; j<i;j++)
+    {
+        if(A[i]===A[j])
+        {
+            console.log("Element "+A[i]+" is repeated")
+            A[j]=FindMissing(A)
+        }
+    }
+}
+A.sort()
+for(var i=0; i<5;i++)
+{
+    console.log(A[i])
+}
+
+    </script>
+</body>
+<!-- <script src="task.js"></script> -->
+</html>
