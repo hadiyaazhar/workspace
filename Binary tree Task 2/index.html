@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Tree Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h3>Balanced Binary Search Tree Graphical representation</h3>
+<script>
+class Node 
+{
+    constructor(data)
+    {
+        this.data=data;
+        this.left=null;
+        this.right=null;
+    }
+}
+const A = [1,2,3,4,5,6,7]
+A.sort()
+var start =0;
+var end= (A.length)-1
+var mid = parseInt((start+end)/2)
+document.writeln("Root -> ")
+document.write(A[mid]+"<br>")
+function CreateBST(A,start,end)
+{  if(start>end) { return null;}
+    var mid = parseInt((start+end)/2)
+    var node = new Node(A[mid])
+    var leftMid = mid-1;
+    var rightMid = mid +1;
+    node.left= CreateBST(A,start,leftMid)
+    node.right=CreateBST(A,rightMid,end)
+    return node;
+}
+
+function printBst(node)
+{  if(node==null){ return;}
+    
+    document.write(+node.data + " <br> ")
+    
+    printBst(node.left)
+   
+    printBst(node.right)
+   
+}
+
+root = CreateBST(A, start, end)
+document.writeln("Left -> ")
+printBst(root.left)
+document.writeln("Right -> ")
+printBst(root.right)
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
