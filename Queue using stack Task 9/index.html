@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enqueue And Dequeue using stack</title>
+</head>
+<body style="text-align:center ;">
+    <h1>
+        Enqueue and Dequeue using stack
+    </h1>
+    <script>
+    var stack1=[]
+    var stack2=[]
+    var top1=-1;
+    var top2=-1;
+    var count=0;
+    N1=5
+    N2=5
+    // push operations
+    function push1(x)
+    {
+        if(top1===N1)
+        {
+            document.write("Stack overflow, cannot  push data.<br>")
+            return false;
+
+        }
+        else
+        {
+            top1++
+            stack1[top1]=x;
+            return true;
+
+        }
+    }
+    function push2(x)
+    {
+        if(top2===N2)
+        {
+            document.write("Stack 2 overflow, cannot push data.<br>")
+            return false;
+        }
+        else
+        {
+            top2++
+            stack2[top2]=x;
+            return true;
+        }
+    }
+    // pop operations
+    function pop1()
+    {   return stack1[top1--];
+        
+        
+    }
+    function pop2()
+    {
+        return stack2[top2--];
+    }
+
+    // enqueue
+    function enqueue(x)
+    {
+     if(push1(x)==true)
+     {
+     document.write("<br><strong>Enqueue Operation </strong>Performed Successfully. You Pushed "+ x +".<br>")
+     count++
+     }
+    }
+
+    function dequeue()
+    { 
+    if((top1===-1)&&(top2===-1))
+        {
+            document.write("Stack is empty cannot perform dequeue operation.<br>")
+        }
+    else
+    {
+
+        for(i=0; i<count;i++)
+            {
+                a=pop1()
+                push2(a)
+            }
+            b=pop2()
+            // console.log(b + " b")
+            count--;
+            // console.log(count + 'count')
+            for(i=0;i<=count;i++)
+            {
+                a=pop2()
+                push1(a)
+                // console.log(a + " a")
+            }
+             document.write("<br><br> <strong>Dequeue Operation </strong>Performed Successfully.<br>")
+             top1--
+
+    }
+    document.write("<br> <strong>Queue:</strong>")
+    for(i=0; i<count; i++)
+    {
+        document.write(stack1[i] + ", ")
+    }
+    }
+    enqueue(1);
+    enqueue(2);
+    enqueue(3);
+    enqueue(4);
+    enqueue(5);
+    enqueue(6);
+    // enqueue(7);
+
+
+    document.write("<br> <strong>Queue:</strong>")
+    for(i=0; i<=N1; i++)
+    {
+        document.write(stack1[i] + ", ")
+    }
+   
+   dequeue();
+   dequeue();
+   dequeue();
+   dequeue();
+   dequeue();
+   dequeue();
+  
+
+
+    </script>
+</body>
+</html>
