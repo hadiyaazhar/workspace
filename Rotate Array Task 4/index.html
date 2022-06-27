@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate Array</title>
+</head>
+<body>
+<script>
+    document.write("JS Working")
+        const A = [1,2,3,4,5,6,7]
+        console.log("Array element before rotation")
+        for(i=0; i<A.length; i++)
+        {
+            console.log(A[i])
+        }
+        console.log("\n")
+        var RotateElement =7;
+        var index;
+        console.log("Rotate element is " + RotateElement + "\n")
+        
+        // To check index  of rotate element index
+        for(var i =0 ; i<A.length; i++ )
+        {
+            if(A[i]===RotateElement)
+            {
+              index=i
+
+            }
+        }
+       for(var i = index; i>=0;i--)
+       {
+        A[i]=A[i-1]
+       }
+        
+      var temp = RotateElement;
+          RotateElement=A[0]
+          A[0]=temp
+      
+         
+
+        
+        console.log("\n")
+        console.log("Array element after rotation")
+
+        for(i=0; i<A.length; i++)
+        {
+            console.log(A[i])
+        }
+
+
+</script>   
+
+</body>
+</html>
