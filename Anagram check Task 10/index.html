@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anagram Check Poblem</title>
+  </head>
+     <body style="text-align: center">
+       <h1>Anagram Check Problem</h1>
+     </body>
+    
+     <script>
+    var A='Army'
+    var B='Mary'
+    var C='silent'
+    var D='listen'
+    var E='abcdd'
+    var F='abcde'
+
+    // to check repetition of  element  in array
+    function RepeatCheck(A)
+    {  
+    //    console.log("Working")
+       A= A.toLowerCase()
+        for(i=0;i<A.length;i++)
+        {
+            for(j=0;j<A.length;j++)
+              {
+               if( i===j)
+               {
+                break
+               }
+               else
+               {
+                if(A[i]===A[j])
+                {
+                    return A[i];
+                }
+               }
+              }
+        }
+    }
+
+
+
+    // AnagramCheck
+    function AnagramCheck(A,B)
+    {
+        document.write("<strong>Word no 1 :  </strong>" + A+"<br>")
+        document.write("<strong>Word no 2 :  </strong>" + B+"<br>")
+       
+
+       
+        if(A.length===B.length)
+        {  
+            document.write("<br><strong>Output :</strong><br>")
+            var a= RepeatCheck(A)
+            var b= RepeatCheck(B)
+            // console.log(a)
+            // console.log(b)
+             if(a===b)
+             {    var count=0
+
+                // console.log("working")
+                for(i=0; i<A.length;i++)
+                {                   
+                    for(j=0; j<B.length;j++)
+                    {              
+                        console.log(" loop b " + B[j])
+                        if(A[i].toLowerCase()===B[j].toLowerCase())
+                        {  count++
+                            break
+                            console.log(A[i] + " = " + B [j] + " with count "+ count)
+                        }
+                        
+                    }
+                }
+                     if(count===A.length)
+                          {
+                              document.write("true <br>")
+                          }
+                     else 
+                          {
+                              document.write("false <br>")
+                          }
+             }
+             else
+             {
+                document.write("false <br>")
+             }
+
+        }
+        else
+        {   
+           document.write("<br><strong>Output :</strong><br>")
+           document.write("<br>Both words must be of same size. INVALID INPUT !!!")
+        }
+    }
+
+    AnagramCheck(A,B)
+    document.write("<br>")
+    AnagramCheck(C,D)
+    document.write("<br>")
+    AnagramCheck(E,F)
+     </script>
+</html>
