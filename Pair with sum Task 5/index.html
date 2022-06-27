@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pair with the given sum in a sorted array</title>
+</head>
+<body >
+    <h1>Pair with the given sum in a sorted array</h1>
+    <b>Given Array is </b>   <br> 
+    <script>
+    
+        var A = [ 10, 22, 28, 29, 30, 40 ]
+        for(var i=0; i<A.length; i++)
+        {
+            document.write(A[i]+",")
+        }
+        A.sort()
+        var N = A.length
+        var Difference=[];
+        var MinDifference=100;
+        var SumArr =[]
+        var indexArr1=[]
+        var indexArr2=[]
+        var Number= 54
+        document.writeln("<br> <br> "+"<strong>   Give number :  </strong>" + Number +"<br>")  
+            var k=0
+            for( i=0 ; i < N; i++)
+            {
+                for( var j=0 ; j<N; j++)
+                {  if(i==j)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        SumArr[k]=A[i]+A[j]
+                        Difference[k] = Math.abs(SumArr[k]-Number)
+                        indexArr1[k]=i
+                        indexArr2[k]=j
+                        k++
+                    }
+                }
+            }
+           var Smallest = Math.min(...Difference)
+        
+           var k= Difference.indexOf(Smallest)
+           document.writeln("<br>"+"<strong>Output</strong>"+"<br>"+A[indexArr1[k]] + "+"+ A[indexArr2[k]]+" --> " + SumArr[k]+ " is most closest" +  " with differene " + Smallest+"\n")
+
+        
+
+    </script>
+</body>
+</html>
