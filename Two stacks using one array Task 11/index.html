@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two stacks using one Array</title>
+</head>
+<body style="text-align: center;">
+    <h3>Task 11 - Two stacks using one Array</h3>
+    
+    <script>
+     const A  =[]
+     const N =10
+     let topA =-1
+     let topB =N
+     
+     function popA()
+     {
+      
+      if(topA===-1)
+      {
+        document.write("UnderFlow stack A <br><br>")
+      }
+      else
+      {
+       item = A[topA]
+       topA=topA-1
+       document.write("Element "+  item +" poped from stack A<br>")
+      }
+     }
+
+
+     function popB()
+     {
+        if(topB>=N)
+      {
+        document.write("UnderFlow stack B<br>")
+      }
+      else
+      { 
+    //   console.log(topB+"TopB")
+      item = A[topB]
+      topB=topB+1
+      document.write("Element "+  item +" poped from stack B<br>")
+
+      }
+     }
+    
+
+     function pushA(x)
+     {
+     // To check OverFlow condition
+    if(topA+1===topB||topA===N || topB===1)
+    {
+        document.write("Stack A overFlow<br>")
+    }
+    else
+    {
+       topA=topA+1
+        A[topA]=x
+        document.write("Value "+ x + " Pushed in stack A<br>")
+
+    }
+
+     }
+
+
+
+     function pushB(x)
+     {
+    // To check OverFlow condition
+    if(topA+1===topB||topA===N || topB===1)
+    {
+        document.write("Stack B overFlow<br>")
+    } 
+    else
+    {
+        topB=topB-1
+        A[topB]=x 
+        document.write("Value "+ x + " Pushed in stack B<br>")
+        // console.log(topB+"TopB")
+
+    }
+     }
+
+document.write("<br><strong>Pushing values in stack A</strong><br><br>")
+pushA(1)
+pushA(2)
+pushA(3)
+pushA(4)
+pushA(5)
+
+document.write("<br>Now Stack A has following elements : <br>")
+for(i=0;i<=topA;i++)
+{
+   document.write(A[i]+" , ")
+}
+
+document.write("<br><strong>Pushing values in stack B</strong><br><br>")
+
+pushB(6)
+pushB(7)
+pushB(8)
+pushB(9)
+pushB(10)
+
+
+document.write("<br>Now Stack B has following elements : <br>")
+for(i=N-1;i>=topB;i--)
+{
+   document.write(A[i]+" , ")
+}
+
+document.write("<br><strong>Poping elements from stack A</strong><br><br>")
+popA()
+popA()
+popA()
+
+
+document.write("<br>Now Stack A has following elements : <br>")
+for(i=0;i<=topA;i++)
+{
+   document.write(A[i]+" , ")
+}
+
+
+document.write("<br><strong>Poping elements from stack B</strong><br><br>")
+
+popB()
+popB()
+popB()
+// popB()
+// popB()
+
+document.write("<br>Now Stack B has following elements : <br>")
+for(i=N-1;i>=topB;i--)
+{
+   document.write(A[i]+" , ")
+}
+
+
+    </script>
+</body>
+</html>
